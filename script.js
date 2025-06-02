@@ -1,30 +1,30 @@
 const enigmes = [
     {
-        question: "Énigme 1 : Je suis une maison de Poudlard qui représente le courage, je suis...",
+        question: "Énigme 1 :",
         reponse: "gryffondor",
         indice: "Indice : Va là où les Moldus rangent les objets bruyants et à roues."
     }, {
-        question: "Énigme 2 : Quelle potion choisis-tu ?",
+        question: "Énigme 2 : Quelle potion choisis-tu pour pour survivre à Rogue ?",
         reponse: "bleu",
         indice: "Indice : Où l'eau danse comme un hippocampe enchanté ?"
     }, {
-        question: "Énigme 3 : Un message apparaît quand tu utilises des molécule d'H₂O sur cette feuille...",
+        question: "Énigme 3 :",
         reponse: "vert",
         indice: "Indice : Fouille la verdure où un elfe pourrait se cacher."
     }, {
-        question: "Énigme 4 : Reconstitue la carte du Maraudeur. Elle t'indique le lieu...",
+        question: "Énigme 4 :",
         reponse: "londres",
         indice: "Indice : Là où l'on regarde les aventures de Harry, Ron et Hermione à l'écran."
     }, {
-        question: "Énigme 5 : 📜 + 🔥 + 💬 = quel sort ?",
+        question: "Énigme 5 :",
         reponse: "incendio",
         indice: "Indice : Là où les mots reposent dans des rangées bien alignées."
     }, {
-        question: "Énigme 6 : Mon tout est ce que tu dois faire pour accéder au trésor...",
+        question: "Énigme 6 :",
         reponse: "creuser",
         indice: "Indice : Un dernier sort, et le trésor apparaîtra dans le monde réel là où la magie à commencer."
     }, {
-        question: "Énigme 7 : Page du livre de Défense contre les Forces du Mal que Rogue adore ?",
+        question: "Énigme 7 :",
         reponse: "394",
         indice: "La clé est là où ce cache ton reflet."
     }
