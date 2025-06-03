@@ -22,7 +22,7 @@ const enigmes = [
     }, {
         question: "Énigme 6 :",
         reponse: "creuser",
-        indice: "Indice : Un dernier sort, et le trésor apparaîtra dans le monde réel là où la magie à commencé."
+        indice: "Indice : Un dernier sort, et le trésor apparaîtra dans le monde réel là où la magie à commencer."
     }, {
         question: "Énigme 7 :",
         reponse: "394",
@@ -30,27 +30,20 @@ const enigmes = [
     }
 ];
 
-let players = {};
 let current = 0;
 
 function checkAnswer() {
 
     const input = document.getElementById("answer").value.trim().toLowerCase();
     const resultDiv = document.getElementById("result");
-    const playerName = prompt("Quel est ton prénom pour suivre la progression ?");
 
-    if(!players[playerName]) players[playerName] = { current: 0, hintsGiven: [] };
+    if(input === enigmes[current].reponse.toLowerCase()) {
 
-    if(input === enigmes[players[playerName].current].reponse.toLowerCase()) {
+        resultDiv.textContent = enigmes[current].indice;
+        current++;
+        if(current < enigmes.length) {
 
-        resultDiv.textContent = enigmes[players[playerName].current].indice;
-        players[playerName].current++;
-        
-        updateAdminDashboard(playerName);
-
-        if(players[playerName].current < enigmes.length) {
-
-            document.getElementById("question").textContent = enigmes[players[playerName].current].question;
+            document.getElementById("question").textContent = enigmes[current].question;
             document.getElementById("answer").value = "";
         } else {
 
@@ -61,12 +54,13 @@ function checkAnswer() {
     } else {
 
         let correctLetters = 0;
-        for(let i = 0; i < Math.min(input.length, enigmes[players[playerName].current].reponse.length); i++) {
+        for(let i = 0; i < Math.min(input.length, enigmes[current].reponse.length); i++) {
 
-            if(input[i] === enigmes[players[playerName].current].reponse[i]) correctLetters++;
+            if(input[i] === enigmes[current].reponse[i]) correctLetters++;
         }
 
-        const accuracy = (correctLetters / enigmes[players[playerName].current].reponse.length) * 100;
+        const accuracy = (correctLetters / enigmes[current].reponse.length) * 100;
+
         if(accuracy >= 50) {
 
             resultDiv.textContent = "Faute d'orthographe. Réessaye !";
@@ -74,40 +68,5 @@ function checkAnswer() {
 
             resultDiv.textContent = "Mauvaise réponse. Réessaye !";
         }
-    }
-}
-
-function updateAdminDashboard(playerName) {
-
-    const adminSection = document.getElementById("admin-section");
-    const playerProgress = players[playerName].current;
-    const progressText = `Énigme ${playerProgress + 1}/${enigmes.length}`;
-
-    document.getElementById("admin-player").textContent = `Joueur : ${playerName}`;
-    document.getElementById("admin-progress").textContent = progressText;
-    
-    adminSection.style.display = "block";
-}
-
-function toggleAdminSection() {
-
-    const adminSection = document.getElementById("admin-section");
-    adminSection.style.display = adminSection.style.display === "none" ? "block" : "none";
-}
-
-function giveAdminHint() {
-
-    const adminHint = document.getElementById("admin-hint").value.trim().toLowerCase();
-
-    if(adminHint) {
-
-        const hintList = document.getElementById("hints-list");
-        const newHint = document.createElement("li");
-        newHint.textContent = adminHint;
-        hintList.appendChild(newHint);
-
-        document.getElementById("admin-hint").value = "";
-        
-        alert(`Indice donné : ${adminHint}`);
     }
 }
