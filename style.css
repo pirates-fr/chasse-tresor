@@ -82,21 +82,47 @@ button:hover {
     color: #f44336;
 }
 
-@media (max-width: 768px) {
+#admin-section {
 
-    body {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1.5em;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+}
 
-        padding: 1.5em;
-    }
+#admin-section h2 {
 
-    .container {
+    margin-bottom: 1em;
+}
 
-        padding: 1.5em;
-    }
+#global-hints {
 
-    input[type="text"], button {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1.5em;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+}
 
-        width: 90%;
-        font-size: 1em;
-    }
+#global-hints h2 {
+
+    margin-bottom: 1em;
+}
+
+#hints-list {
+
+    list-style-type: none;
+    padding: 0;
+}
+
+#hints-list li {
+
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 8px;
+    color: #d4af37;
 }
